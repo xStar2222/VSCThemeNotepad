@@ -7,8 +7,9 @@ Download Here: https://cdn.discordapp.com/attachments/1083622718919933994/109940
 
 # Features:
 - File system allowing you to save and open .txt files.
-- Word count
+- Word count.
 
 # To Do:
 - Add word count goal / word count remaining to hit goal.
-- Add some sout of auto-correct
+- Add some sout of auto-correct.
+- Add multiple taps like Notepad++.
