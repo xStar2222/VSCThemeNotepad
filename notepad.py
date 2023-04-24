@@ -21,18 +21,10 @@ def update_word_count(event=None):
     word_count_label.config(text=f"Word count: {word_count}")
 
 root = tk.Tk()
-root.title("Python Notepad")
-
-
+root.title("VSC Notepad")
 
 text = tk.Text(root, wrap=tk.WORD, font=("Consolas", 14), bg='#1e1e1e', fg='#d4d4d4', insertbackground='white', selectbackground='#3c3c3c', undo=True)
 text.pack(expand=True, fill=tk.BOTH)
-
-text.bind("<KeyRelease>", update_word_count)
-def update_word_count(event=None):
-    content = text.get(1.0, tk.END).strip()
-    word_count = len(content.split())
-    word_count_label.config(text=f"Word count: {word_count}")
 
 text.bind("<KeyRelease>", update_word_count)
 
@@ -46,7 +38,10 @@ file_menu.add_command(label="Save", command=save_file)
 file_menu.add_separator()
 file_menu.add_command(label="Exit", command=root.quit)
 
-word_count_label = tk.Label(root, text="Word count: 0", bg='#1e1e1e', fg='#d4d4d4')
-word_count_label.pack(side=tk.BOTTOM, anchor=tk.W, padx=5, pady=5)
+bottom_bar = tk.Frame(root, bg='#2b2b2b')  # Set the background color of the frame to '#2b2b2b'
+bottom_bar.pack(side=tk.BOTTOM, fill=tk.X)  # Place the frame at the bottom and make it fill the available width
+
+word_count_label = tk.Label(bottom_bar, text="Word count: 0", bg='#2b2b2b', fg='#d4d4d4')
+word_count_label.pack(side=tk.LEFT, anchor=tk.W, padx=5, pady=5)
 
 root.mainloop()
